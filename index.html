@@ -8,6 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Tailwind utility classes (browser CDN for copy/paste setup; compile for scaled production). -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- CareerOS Premium Favicon -->
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FF7A1A'/%3E%3Cpath d='M19 44L44 19M26 19h18v18' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+/>
+
+<!-- Browser Theme -->
+<meta name="theme-color" content="#FF7A1A" />
+<meta name="application-name" content="CareerOS" />
+
   <style>
     :root{--orange:#ff7a1a;--deep:#20242d;--muted:#747b8a;--line:#ebeef2;--font:'Plus Jakarta Sans',sans-serif}
     *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--font);color:var(--deep)}body{background:#fffaf5}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:#e96209;text-decoration:none}
@@ -60,7 +72,7 @@
     import {initializeApp} from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js';
     import {getAuth,setPersistence,browserLocalPersistence,browserSessionPersistence,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,sendPasswordResetEmail,signInWithPopup,GoogleAuthProvider,updateProfile,signOut,reload,getRedirectResult,signInWithRedirect} from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js';
     // REPLACE ONLY THESE PUBLIC FIREBASE WEB CONFIG VALUES. NEVER PASTE A SERVICE ACCOUNT KEY.
-    const firebaseConfig={apiKey:'PASTE_FIREBASE_WEB_API_KEY',authDomain:'PASTE_PROJECT_ID.firebaseapp.com',projectId:'PASTE_PROJECT_ID',appId:'PASTE_FIREBASE_APP_ID'};
+    const firebaseConfig={apiKey:'AIzaSyAaXOStPG0MLxZ9Gd8NDvbjeD7Hl_4Zxzc',authDomain:'careeros-database.firebaseapp.com',projectId:'careeros-database',appId:'1:81198568945:web:7851b7a36fbe89b73b2050'};
     const $=s=>document.querySelector(s), app=initializeApp(firebaseConfig),auth=getAuth(app),provider=new GoogleAuthProvider();
     const isConfigured=()=>!firebaseConfig.apiKey.startsWith('PASTE_');
     const modes=['signin','signup','forgot','verify'];let busy=false,registrationInProgress=false;
