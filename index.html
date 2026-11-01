@@ -1,98 +1,566 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#fffaf4"><meta name="description" content="CareerOS — kelola kesempatan dan perjalanan karier dalam satu tempat.">
-  <title>CareerOS — Welcome to your next chapter</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Tailwind utility classes (browser CDN for copy/paste setup; compile for scaled production). -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ff881f">
+  <meta name="description" content="CareerOS — ruang pribadi untuk merencanakan dan mengelola perjalanan kariermu.">
+  <title>CareerOS — Your next chapter starts here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-<!-- CareerOS Premium Favicon -->
-<link
-  rel="icon"
-  type="image/svg+xml"
-  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FF7A1A'/%3E%3Cpath d='M19 44L44 19M26 19h18v18' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-/>
-
-<!-- Browser Theme -->
-<meta name="theme-color" content="#FF7A1A" />
-<meta name="application-name" content="CareerOS" />
-
+  <!-- CareerOS favicon: embedded SVG; no extra file required -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FF7A1A'/%3E%3Cpath d='M19 44L44 19M26 19h18v18' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <style>
-    :root{--orange:#ff7a1a;--deep:#20242d;--muted:#747b8a;--line:#ebeef2;--font:'Plus Jakarta Sans',sans-serif}
-    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--font);color:var(--deep)}body{background:#fffaf5}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:#e96209;text-decoration:none}
-    .auth-layout{min-height:100dvh;display:grid;grid-template-columns:minmax(410px,1.02fr) minmax(490px,.98fr);padding:14px;gap:14px;max-width:1760px;margin:auto}
-    .brand-panel{min-height:calc(100dvh - 28px);border-radius:29px;position:relative;overflow:hidden;background:linear-gradient(132deg,#ffb366 0%,#ff8a32 41%,#fc6617 100%);padding:40px 44px;color:#fff;display:flex;flex-direction:column;isolation:isolate}
-    .brand-panel:before{content:'';position:absolute;width:780px;height:780px;border:1px solid #ffffff32;border-radius:50%;top:22%;right:-60%;box-shadow:0 0 0 90px #ffffff0b,0 0 0 180px #ffffff08;z-index:-1}.brand-panel:after{content:'';position:absolute;width:420px;height:420px;filter:blur(55px);border-radius:50%;background:#ffe2ae6a;top:-160px;right:-120px;z-index:-1}
-    .brand-logo{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:800;letter-spacing:-1px}.logo-icon{width:38px;height:38px;background:#fff;border-radius:13px;color:var(--orange);display:grid;place-items:center;font-weight:800;box-shadow:0 9px 25px #f05c1940}
-    .brand-copy{margin-top:clamp(45px,9vh,108px);max-width:570px;position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border:1px solid #ffffff60;border-radius:100px;background:#ffffff26;color:#fff;font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;backdrop-filter:blur(12px)}.brand-copy h1{font-size:clamp(36px,4.8vw,68px);line-height:1.13;letter-spacing:-3.4px;font-weight:800;margin:28px 0 22px}.brand-copy p{font-size:14px;line-height:1.95;color:#fffde8;max-width:445px}
-    .scenery{flex:1;position:relative;min-height:290px;max-height:430px;margin:30px 0 12px;display:flex;align-items:center;justify-content:center}.career-board{width:min(92%,480px);transform:rotate(-5deg);background:#fffef9;border-radius:24px;box-shadow:0 35px 95px #a9381770;color:#272a35;padding:25px 28px;position:relative;z-index:1}.board-header{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:800;color:#7e8491}.board-header strong{font-size:14px;color:#242732}.chip{background:#fff1e2;color:#f26a18;border-radius:99px;padding:6px 10px;font-size:10px}.trend{display:flex;align-items:center;gap:10px;margin:24px 0}.trend strong{font-size:37px;letter-spacing:-2px}.trend span{font-size:11px;color:#37915a;background:#e8fff0;padding:7px 11px;border-radius:8px}.progress-track{height:8px;background:#f0f1f4;border-radius:12px;overflow:hidden}.progress-track div{height:100%;width:77%;background:linear-gradient(90deg,#ff7a1a,#ffbb72);border-radius:12px}.steps{display:flex;justify-content:space-between;margin-top:15px;font-size:10px;color:#8c929f}.floating-ticket{position:absolute;z-index:2;padding:12px 15px;background:#fff;border:1px solid #f0f0f0;box-shadow:0 13px 40px #a4412452;border-radius:15px;display:flex;align-items:center;gap:11px;color:#292d37;font-size:11px;font-weight:800}.float-top{right:0;top:5%;transform:rotate(7deg)}.float-bottom{left:1%;bottom:6%;transform:rotate(5deg)}.ticket-dot{width:35px;height:35px;display:grid;place-items:center;border-radius:12px;background:#fff0de;font-size:18px}.ticket-sub{display:block;font-size:9px;color:#858b97;margin-top:3px;font-weight:500}.brand-footer{display:flex;justify-content:space-between;gap:10px;opacity:.9;font-size:11px;color:#fffadf;margin-top:auto}
-    .form-panel{display:flex;align-items:center;justify-content:center;padding:46px 28px;min-height:calc(100dvh - 28px)}.form-inner{width:min(100%,440px)}.mini-eyebrow{display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:800;color:#e46b1b}.mini-eyebrow:before{content:'';width:7px;height:7px;background:#ff8b31;border-radius:50%;box-shadow:0 0 0 5px #fff0e4}.form-title{font-size:clamp(29px,3vw,38px);line-height:1.23;letter-spacing:-1.55px;font-weight:800;margin:18px 0 12px}.form-desc{font-size:13px;line-height:1.85;color:#858c9a;margin:0 0 28px}.mode-tabs{display:flex;padding:5px;background:#f5f5f6;border:1px solid #eef0f4;border-radius:15px;margin:0 0 25px}.mode-tab{border:0;background:transparent;color:#8a8f9b;padding:12px 20px;flex:1;border-radius:11px;font-size:12px;font-weight:800;transition:.18s}.mode-tab.active{background:#fff;color:#e86a15;box-shadow:0 4px 13px #2222220c}.field{margin:0 0 17px}.field label{display:block;font-size:11px;color:#4f5663;font-weight:800;margin-bottom:9px}.field input{background:#fff;border:1px solid #e5e8ee;width:100%;height:51px;padding:0 16px;outline:none;border-radius:12px;color:#2a303c;font-size:13px;transition:.2s}.field input:focus{border-color:#ff9e59;box-shadow:0 0 0 4px #fff0e6}.field input::placeholder{color:#aeb2bc}.pw-wrap{position:relative}.pw-wrap input{padding-right:57px}.pw-toggle{position:absolute;right:9px;top:7px;height:38px;width:42px;border:0;background:transparent;color:#9298a4;border-radius:8px;font-size:15px}.row-actions{display:flex;justify-content:space-between;align-items:center;margin:2px 0 22px;gap:10px;font-size:11px}.row-actions label{display:flex;align-items:center;gap:8px;color:#6d7481}.row-actions input{accent-color:#ff7a1a}.link-text{font-size:11px;font-weight:800;color:#ed741e;border:0;background:none;padding:0}.primary{background:linear-gradient(110deg,#ff7a1a,#ff9a47);border:0;border-radius:13px;color:#fff;height:52px;width:100%;font-size:12px;letter-spacing:.15px;font-weight:800;box-shadow:0 12px 24px #ff7a1a31;transition:.2s}.primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 16px 30px #ff7a1a43}.primary:active{transform:translateY(0)}.or{display:flex;align-items:center;gap:13px;text-align:center;color:#a5abb5;font-size:10px;margin:23px 0}.or:before,.or:after{content:'';flex:1;border-top:1px solid #e9ecf1}.google{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;border:1px solid #e5e8ee;background:#fff;border-radius:13px;height:50px;font-weight:800;font-size:11px;color:#394150}.google:hover{border-color:#ffb77e}.google span{font-size:19px;font-weight:800;color:#4285f4}.bottom-note{text-align:center;font-size:11px;color:#98a0ab;margin-top:35px;line-height:1.7}.alert{padding:12px 14px;border-radius:11px;border:1px solid #ffd5ca;background:#fff3ed;color:#b74728;font-size:11px;line-height:1.6;margin:0 0 18px;display:none}.alert.success{border-color:#b7efc9;background:#eafbf0;color:#1d8148}.alert.show{display:block}.mode{display:none;animation:slidein .25s ease}.mode.visible{display:block}.back{border:0;background:none;font-size:11px;color:#ef771b;font-weight:800;padding:0;margin:0 0 20px}.verify-art{font-size:44px;background:#fff2e5;width:82px;height:82px;display:grid;place-items:center;border-radius:25px;margin-bottom:22px}
-    @keyframes slidein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-    @media(max-width:1020px){.auth-layout{grid-template-columns:.93fr 1.07fr}.brand-panel{padding:29px}.career-board{padding:19px}.brand-copy h1{font-size:41px;letter-spacing:-2px}.brand-copy{margin-top:56px}.floating-ticket{display:none}}
-    @media(max-width:760px){.auth-layout{display:block;padding:0}.brand-panel{min-height:auto;height:130px;border-radius:0 0 26px 26px;padding:24px 26px}.brand-copy,.scenery,.brand-footer{display:none}.form-panel{min-height:calc(100dvh - 130px);padding:35px 23px;align-items:flex-start}.form-inner{margin:0 auto}.form-title{font-size:31px}.bottom-note{margin-top:23px}}
-    @media(max-width:350px){.form-panel{padding:30px 16px}.brand-panel{padding:23px 18px}.mode-tab{padding:12px 10px}}
-    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    :root { color-scheme:light; --orange:#ff7919; --orange-deep:#e96b17; --orange-soft:#fff1e3; --ink:#242936; --muted:#858d9a; --border:#e9e9ef; --bg:#fff9f5; --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { min-width:320px; scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; min-height:100dvh; font-family:var(--font); color:var(--ink); background:#fff9f5; -webkit-font-smoothing:antialiased; }
+    button,input { font:inherit; }
+    button { cursor:pointer; }
+    button:disabled { cursor:wait; opacity:.65; }
+    input { min-width:0; }
+    button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid #ffb66f; outline-offset:3px; }
+    .visually-hidden { position:absolute!important; height:1px; width:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+
+    /* Two-column editorial layout inspired by the reference, no illustration card. */
+    .auth-shell { width:100%; min-height:100dvh; display:grid; grid-template-columns:minmax(0,1.57fr) minmax(440px,1fr); align-items:stretch; }
+    .brand-panel { position:relative; overflow:hidden; isolation:isolate; min-width:0; min-height:100dvh; display:flex; flex-direction:column; padding:clamp(32px,3.4vw,58px) clamp(45px,5.1vw,94px) 32px; color:#fff; background:linear-gradient(115deg,#f47719 0%,#ff922f 44%,#ffb568 100%); }
+    /* Soft ambient light and circular geometry are painted on the surface, not pasted-in images. */
+    .brand-panel::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(ellipse 77% 68% at 110% -8%,rgba(255,250,225,.24),transparent 74%),radial-gradient(ellipse 63% 60% at -22% 100%,rgba(255,103,25,.32),transparent 85%); }
+    .brand-panel::after { content:""; position:absolute; z-index:-1; pointer-events:none; width:min(78vw,850px); aspect-ratio:1; border-radius:50%; right:-41%; bottom:-25%; border:1px solid rgba(255,255,255,.40); box-shadow:0 0 0 115px rgba(255,255,255,.075),0 0 0 236px rgba(255,255,255,.055),0 0 0 356px rgba(255,255,255,.035); }
+    .brand-header { position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; }
+    .brand-logo { display:inline-flex; align-items:center; gap:14px; min-width:0; color:#fff; white-space:nowrap; font-size:24px; line-height:1; font-weight:800; letter-spacing:-1.25px; }
+    .logo-mark { display:grid; place-items:center; flex:0 0 48px; width:48px; height:48px; border-radius:15px; background:linear-gradient(150deg,#fff,#fffaf4); color:#f37c21; box-shadow:0 12px 29px rgba(127,52,12,.16); }
+    .logo-mark svg { width:25px; height:25px; }
+    .brand-suffix { display:block; margin:7px 0 0 1px; color:rgba(255,255,255,.88); font-size:9px; font-weight:800; letter-spacing:1.65px; text-transform:uppercase; }
+    .brand-available { flex:0 0 auto; display:inline-flex; gap:9px; align-items:center; color:rgba(255,255,255,.94); font-size:9px; font-weight:800; letter-spacing:1.25px; text-transform:uppercase; }
+    .brand-available::before { content:""; width:6px; height:6px; border-radius:100%; background:#caffd5; box-shadow:0 0 0 4px rgba(221,255,227,.22); }
+    .story-content { position:relative; z-index:1; width:100%; max-width:710px; margin:auto 0; padding:clamp(56px,8vh,112px) 0 65px; }
+    .story-eyebrow { display:inline-flex; align-items:center; gap:10px; color:#fff; font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; }
+    .story-eyebrow::before { content:""; display:block; width:7px; height:7px; border-radius:100%; background:#dbffd8; box-shadow:0 0 0 5px rgba(255,255,255,.19); }
+    .story-title { margin:26px 0 20px; max-width:750px; font-size:clamp(44px,5.0vw,78px); line-height:1.115; font-weight:800; letter-spacing:-.068em; text-wrap:balance; }
+    .story-line { display:block; }
+    .story-highlight { color:#fff6e8; }
+    .story-description { margin:0; max-width:555px; color:rgba(255,255,255,.96); font-size:clamp(13px,1.05vw,15px); font-weight:500; line-height:1.95; }
+    .value-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100%,615px); gap:30px; margin-top:clamp(34px,6vh,59px); }
+    .value-item { min-width:0; padding-top:20px; border-top:1px solid rgba(255,255,255,.47); }
+    .value-item .value-kicker { display:block; margin-bottom:10px; color:#fff4e6; font-size:9px; font-weight:800; letter-spacing:1.25px; }
+    .value-item strong { display:block; color:#fff; font-size:clamp(14px,1.17vw,17px); font-weight:800; letter-spacing:-.4px; line-height:1.45; }
+    .value-item p { margin:8px 0 0; max-width:250px; color:rgba(255,255,255,.91); font-size:11px; line-height:1.8; }
+    .brand-footer { z-index:1; position:relative; display:flex; justify-content:space-between; align-items:center; gap:22px; width:100%; color:rgba(255,255,255,.88); font-size:10px; font-weight:500; line-height:1.5; }
+    .brand-footer span:last-child { white-space:nowrap; font-weight:700; }
+    /* RIGHT FORM / AUTH STATES */
+    .form-stage { position:relative; min-width:0; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:36px clamp(24px,3.1vw,62px); background:radial-gradient(ellipse 70% 49% at 100% 0%,#ffe8d4,transparent 88%),linear-gradient(140deg,#fffaf6 0%,#fff8f3 60%,#fffdfb 100%); }
+    .form-stage:before { content:""; position:absolute; width:380px; height:380px; right:0; top:0; background:radial-gradient(circle,#ffe2c678,transparent 65%); pointer-events:none; }
+    .form-region { position:relative; z-index:1; width:min(100%,474px); }
+    .form-card { background:rgba(255,255,255,.97); border:1px solid rgba(237,226,218,.93); border-radius:24px; padding:clamp(26px,2.5vw,38px); box-shadow:0 18px 60px rgba(98,53,26,.085),0 2px 10px rgba(95,67,45,.03); }
+    .form-topline { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:26px; }
+    .mini-eyebrow { display:inline-flex; align-items:center; gap:8px; color:#e67326; font-size:9px; font-weight:800; letter-spacing:1.65px; text-transform:uppercase; }
+    .mini-eyebrow:before { content:""; flex:0 0 7px; width:7px; height:7px; background:#ff8829; border-radius:50%; box-shadow:0 0 0 4px #fff1e5; }
+    .secure-meta { display:flex; align-items:center; gap:6px; color:#a1a6af; font-size:10px; font-weight:700; white-space:nowrap; }
+    .secure-meta svg { width:13px; height:13px; color:#85a48d; }
+    .mode { display:none; }
+    .mode.visible { display:block; animation:mode-in .27s ease both; }
+    .form-title { color:#202630; font-weight:800; font-size:clamp(30px,2.95vw,39px); line-height:1.18; letter-spacing:-.057em; margin:0 0 11px; }
+    .title-accent { color:#fa781f; }
+    .form-desc { margin:0 0 24px; max-width:430px; color:#838b9a; font-size:12.5px; line-height:1.85; font-weight:500; }
+    .mode-tabs { display:grid; grid-template-columns:1fr 1fr; padding:5px; gap:4px; background:#f7f6f6; border:1px solid #efedf0; border-radius:13px; margin:0 0 25px; }
+    .mode-tab { min-width:0; min-height:43px; border:0; border-radius:9px; background:transparent; color:#8f96a4; font-size:11.5px; font-weight:800; transition:background .18s,color .18s,box-shadow .18s; }
+    .mode-tab:hover:not(.active) { color:#ed7925; background:#fff7ef; }
+    .mode-tab.active { background:#fff; color:#ec7120; box-shadow:0 3px 13px #2c26300c,0 0 0 1px #eeeeee8a; }
+    .field { margin-bottom:17px; }
+    .field label { display:block; margin:0 0 9px; color:#4c5564; font-size:11.5px; font-weight:750; }
+    .input-wrap { position:relative; }
+    .input-icon { position:absolute; top:50%; left:15px; width:17px; height:17px; color:#a6acb9; transform:translateY(-50%); pointer-events:none; }
+    .field input:not([type="checkbox"]) { display:block; width:100%; height:53px; border:1px solid #e6e9ed; border-radius:12px; background:#fff; padding:0 16px 0 45px; color:#262d3a; font-size:12.5px; outline:0; transition:border .2s,box-shadow .2s,background .2s; }
+    .field input:not([type="checkbox"]):hover { border-color:#ffd4b4; }
+    .field input:not([type="checkbox"]):focus { border-color:#ff9a52; background:#fffdfb; box-shadow:0 0 0 4px #fff0e3; }
+    .field input::placeholder { color:#aab0bb; }
+    .field input.is-invalid { border-color:#ee7a71; box-shadow:0 0 0 3px #fff1ef; }
+    .with-password input { padding-right:54px!important; }
+    .pw-toggle { position:absolute; display:grid; place-items:center; top:6px; right:7px; height:41px; width:41px; border-radius:10px; background:transparent; border:0; color:#8f97a3; transition:background .15s,color .15s; }
+    .pw-toggle:hover { background:#fff1e5; color:#f4761b; }
+    .pw-toggle svg { width:19px; height:19px; }
+    .helper { font-size:10px; color:#939aa7; margin:7px 2px 0; line-height:1.55; }
+    .row-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:1px 0 21px; font-size:11px; }
+    .check-label { display:flex; align-items:center; gap:9px; min-width:0; color:#858c98; cursor:pointer; }
+    .check-label input { width:16px; height:16px; margin:0; accent-color:#fc7b24; cursor:pointer; }
+    .text-btn { color:#e96e1b; border:0; background:transparent; font-size:11px; font-weight:800; padding:5px 0; }
+    .text-btn:hover { text-decoration:underline; text-underline-offset:3px; }
+    .primary { position:relative; width:100%; height:53px; display:flex; align-items:center; justify-content:center; gap:9px; padding:0 18px; border:0; border-radius:12px; color:#fff; font-weight:800; font-size:12px; background:linear-gradient(106deg,#ff7419,#ff993e); box-shadow:0 12px 23px #ff782534, inset 0 1px 0 #ffffff59; transition:transform .2s,box-shadow .2s,filter .2s; }
+    .primary:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 16px 30px #ff782544; filter:saturate(1.08); }
+    .primary:active:not(:disabled) { transform:translateY(0); }
+    .primary svg { width:17px; height:17px; }
+    .separator { display:flex; align-items:center; gap:13px; margin:23px 0; font-size:9px; font-weight:750; color:#abb0ba; letter-spacing:.5px; white-space:nowrap; }
+    .separator:before,.separator:after { content:""; flex:1; border-top:1px solid #edf0f3; }
+    .google-btn { width:100%; min-height:52px; border-radius:12px; border:1px solid #e6e9ed; background:#fff; display:flex; align-items:center; justify-content:center; gap:12px; color:#3f4754; font-size:11.5px; font-weight:800; transition:background .18s,border .18s,transform .18s,box-shadow .18s; }
+    .google-btn:hover:not(:disabled) { background:#fffbf7; border-color:#ffbd88; transform:translateY(-1px); box-shadow:0 8px 17px #5c3c1511; }
+    .google-btn svg { width:19px; height:19px; }
+    .alert { display:none; align-items:flex-start; gap:9px; padding:12px 14px; margin:0 0 19px; border:1px solid #ffd7c3; border-radius:11px; background:#fff5ee; color:#aa4e25; font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
+    .alert.show { display:flex; }
+    .alert:before { content:"!"; display:grid; place-items:center; flex:0 0 17px; width:17px; height:17px; border:1px solid currentColor; border-radius:50%; font-size:11px; font-weight:800; }
+    .alert.success { background:#edfcf2; border-color:#bfedd0; color:#257d4d; }
+    .alert.success:before { content:"✓"; }
+    .back { display:inline-flex; gap:8px; align-items:center; margin:0 0 28px; border:0; padding:0; font-size:11px; font-weight:800; color:#ef7c27; background:transparent; }
+    .back:hover { text-decoration:underline; }
+    .state-icon { display:grid; place-items:center; width:62px; height:62px; border-radius:19px; margin-bottom:21px; background:linear-gradient(140deg,#fff3e7,#ffe2bf); color:#f27a1c; box-shadow:0 9px 22px #f47e1719; }
+    .state-icon svg { width:28px; height:28px; }
+    .form-foot { margin:19px 2px 0; text-align:center; font-size:10px; color:#a0a5b0; line-height:1.8; }
+    .trust-footer { position:relative; z-index:1; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px 13px; color:#a1a6b0; font-size:9px; margin:19px auto 0; line-height:1.7; text-align:center; }
+    .trust-footer span { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+    .trust-footer svg { width:13px; height:13px; }
+    @keyframes mode-in { from { opacity:0; transform:translateY(7px); } to { opacity:1; transform:translateY(0); } }
+    /* Maintain natural scroll on short desktop screens, rather than clipping. */
+    @media (min-width:961px) and (max-height:775px) {
+      .brand-panel { padding-top:27px; padding-bottom:24px; }
+      .story-content { padding:24px 0 26px; }
+      .story-title { font-size:clamp(40px,4.2vw,65px); margin:16px 0 11px; }
+      .story-description { line-height:1.75; }
+      .value-grid { margin-top:26px; gap:23px; }
+      .value-item { padding-top:13px; }
+      .form-stage { padding-top:20px; padding-bottom:20px; }
+      .form-card { padding:25px 29px; }
+    }
+    @media (max-width:1220px) and (min-width:961px) {
+      .auth-shell { grid-template-columns:minmax(0,1.1fr) minmax(412px,.9fr); }
+      .brand-panel { padding-inline:clamp(34px,4.3vw,55px); }
+      .brand-available { display:none; }
+      .story-title { font-size:clamp(43px,4.6vw,58px); }
+      .value-grid { gap:18px; }
+      .form-stage { padding-inline:24px; }
+    }
+    @media (max-width:960px) {
+      .auth-shell { display:block; min-height:100dvh; }
+      .brand-panel { min-height:0; padding:25px clamp(22px,5vw,48px) 28px; border-radius:0 0 27px 27px; }
+      .brand-panel::after { width:500px; right:-220px; bottom:-370px; }
+      .brand-header,.story-content { max-width:650px; margin-inline:auto; }
+      .brand-available { font-size:9px; }
+      .story-content { padding:0; margin-top:30px; margin-bottom:2px; }
+      .story-title { margin:14px 0 10px; font-size:clamp(32px,4.4vw,43px); line-height:1.13; letter-spacing:-1.9px; }
+      .story-description { font-size:12px; line-height:1.75; max-width:580px; }
+      .value-grid,.brand-footer { display:none; }
+      .form-stage { padding:26px 20px 42px; min-height:0; }
+      .form-region { max-width:500px; }
+    }
+    @media (max-width:570px) {
+      .brand-panel { padding:21px 21px 27px; border-radius:0 0 23px 23px; }
+      .brand-logo { font-size:20px; gap:11px; }
+      .logo-mark { width:39px; height:39px; flex-basis:39px; border-radius:12px; }
+      .logo-mark svg { width:22px; height:22px; }
+      .brand-suffix { font-size:8px; margin-top:5px; letter-spacing:1.1px; }
+      .brand-available { display:none; }
+      .story-content { margin-top:25px; }
+      .story-eyebrow { font-size:8px; letter-spacing:1.05px; }
+      .story-title { font-size:clamp(28px,7vw,36px); line-height:1.12; letter-spacing:-1.5px; margin:12px 0 9px; }
+      .story-description { font-size:11px; line-height:1.7; }
+      .form-stage { padding:20px 13px 34px; }
+      .form-card { padding:25px 21px; border-radius:20px; }
+      .form-topline { margin-bottom:22px; }
+      .form-title { font-size:30px; }
+      .form-desc { font-size:12px; }
+      .trust-footer { font-size:9px; }
+    }
+    @media (max-width:370px) {
+      .brand-panel { padding:18px 16px 24px; }
+      .story-title { font-size:26px; }
+      .form-stage { padding-inline:10px; }
+      .form-card { padding:23px 16px; }
+      .mini-eyebrow { font-size:8px; letter-spacing:.9px; }
+      .secure-meta { font-size:9px; }
+      .row-actions,.text-btn { font-size:10px; }
+      .mode-tab { font-size:10px; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
   </style>
 </head>
 <body>
-  <div class="auth-layout">
-    <section class="brand-panel" aria-label="CareerOS">
-      <div class="brand-logo"><span class="logo-icon">↗</span> CareerOS <span style="font-size:9px;font-weight:600;letter-spacing:1px;opacity:.8;margin-left:4px">CAREER INTELLIGENCE</span></div>
-      <div class="brand-copy"><span class="eyebrow">✦ Your ambition. Our focus.</span><h1>Every great<br>career begins<br>with intention.</h1><p>Organisasi setiap peluang, rencanakan perjalanan, dan wujudkan milestone kariermu dalam satu ruang yang dirancang khusus untuk bertumbuh.</p></div>
-      <div class="scenery" aria-hidden="true">
-        <div class="floating-ticket float-top"><span class="ticket-dot">✦</span><span>Interview confirmed<span class="ticket-sub">Your next milestone is closer</span></span></div>
-        <div class="career-board"><div class="board-header"><strong>My career journey</strong><span class="chip">↗ On the rise</span></div><div class="trend"><strong>76%</strong><span>▲ +12% this month</span></div><div class="progress-track"><div></div></div><div class="steps"><span>Discover</span><span>Apply</span><span>Interview</span><span>Achieve</span></div></div>
-        <div class="floating-ticket float-bottom"><span class="ticket-dot">✓</span><span>New opportunity saved<span class="ticket-sub">Stay ready for what is next</span></span></div>
+  <div class="auth-shell">
+    <!-- LEFT: full-bleed editorial brand section; no pasted-on card graphics -->
+    <aside class="brand-panel" aria-label="Tentang CareerOS">
+      <div class="brand-header">
+        <div class="brand-logo">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5M8 5h11v11"/></svg></span>
+          <span>CareerOS <span class="brand-suffix">YOUR CAREER WORKSPACE</span></span>
+        </div>
+        <span class="brand-available">PERSONAL CAREER SPACE</span>
       </div>
-      <div class="brand-footer"><span>© 2026 CareerOS · Crafted for progress</span><span>Dream bigger. Move smarter. ↗</span></div>
-    </section>
-    <main class="form-panel"><div class="form-inner">
-      <div class="mini-eyebrow">Your personal career space</div>
-      <div id="alert" class="alert" role="status" aria-live="polite"></div>
-      <div id="mode-signin" class="mode visible">
-        <h1 class="form-title">Welcome back<span style="color:#ff7a1a">.</span></h1><p class="form-desc">Satu langkah lebih dekat menuju karier impianmu. Masuk untuk melanjutkan perjalananmu.</p>
-        <div class="mode-tabs"><button class="mode-tab active" data-go="signin" type="button">Sign in</button><button class="mode-tab" data-go="signup" type="button">Create account</button></div>
-        <form id="loginForm"><div class="field"><label for="loginEmail">Email address</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="field"><label for="loginPassword">Password</label><div class="pw-wrap"><input id="loginPassword" type="password" autocomplete="current-password" minlength="6" placeholder="Enter your password" required><button class="pw-toggle" type="button" aria-label="Show password" data-show="loginPassword">◉</button></div></div>
-          <div class="row-actions"><label><input type="checkbox" id="rememberEmail"> Remember email</label><button type="button" class="link-text" data-go="forgot">Forgot password?</button></div><button class="primary" type="submit">Sign in to CareerOS →</button></form>
-        <div class="or">OR CONTINUE WITH</div><button class="google" type="button" id="googleLogin"><span>G</span> Continue with Google</button>
+
+      <div class="story-content">
+        <span class="story-eyebrow">YOUR AMBITION, IN MOTION</span>
+        <h1 class="story-title"><span class="story-line">Peluang terbuka.</span><span class="story-line story-highlight">Karier terarah.</span></h1>
+        <p class="story-description">Kelola lowongan pekerjaan, pantau setiap proses lamaran, atur jadwal interview, dan rencanakan langkah profesionalmu — semuanya dalam satu ruang yang terintegrasi.</p>
+        <div class="value-grid" aria-label="Keunggulan CareerOS">
+          <div class="value-item">
+            <span class="value-kicker">01 / ORGANIZED</span>
+            <strong>Semua peluang, satu tempat.</strong>
+            <p>Pekerjaan, internship, dan volunteer tersusun rapi agar tidak ada kesempatan yang terlewat.</p>
+          </div>
+          <div class="value-item">
+            <span class="value-kicker">02 / IN CONTROL</span>
+            <strong>Setiap langkah terpantau.</strong>
+            <p>Ikuti progres lamaran, jadwal interview, hingga pencapaian karier dengan lebih jelas.</p>
+          </div>
+        </div>
       </div>
-      <div id="mode-signup" class="mode"><h1 class="form-title">Build your future<span style="color:#ff7a1a">.</span></h1><p class="form-desc">Buat akun gratis dan mulai kelola seluruh peluang dalam satu dashboard.</p>
-        <div class="mode-tabs"><button class="mode-tab" data-go="signin" type="button">Sign in</button><button class="mode-tab active" data-go="signup" type="button">Create account</button></div>
-        <form id="registerForm"><div class="field"><label for="regName">Full name</label><input id="regName" autocomplete="name" placeholder="Your full name" required maxlength="100"></div><div class="field"><label for="regEmail">Email address</label><input id="regEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="field"><label for="regPassword">Password</label><div class="pw-wrap"><input id="regPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required><button type="button" class="pw-toggle" data-show="regPassword">◉</button></div></div><div class="field"><label for="regConfirm">Confirm password</label><div class="pw-wrap"><input id="regConfirm" type="password" minlength="8" autocomplete="new-password" placeholder="Repeat your password" required><button type="button" class="pw-toggle" data-show="regConfirm">◉</button></div></div><button type="submit" class="primary">Create my account →</button></form>
+
+      <div class="brand-footer">
+        <span>© <span id="brandYear">2026</span> CareerOS · Created for your growth</span>
+        <span>Plan with clarity. Grow with purpose. ↗</span>
       </div>
-      <div id="mode-forgot" class="mode"><button class="back" type="button" data-go="signin">← Back to sign in</button><div class="verify-art">✉</div><h1 class="form-title">Reset your password<span style="color:#ff7a1a">.</span></h1><p class="form-desc">Masukkan email untuk menerima tautan pemulihan kata sandi. Periksa inbox dan folder spam.</p><form id="forgotForm"><div class="field"><label for="forgotEmail">Email address</label><input id="forgotEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div><button class="primary" type="submit">Send reset link →</button></form></div>
-      <div id="mode-verify" class="mode"><div class="verify-art">📩</div><h1 class="form-title">Verify your email<span style="color:#ff7a1a">.</span></h1><p class="form-desc">Kami telah mengirim tautan verifikasi ke <strong id="verifyEmail"></strong>. Klik tautannya, lalu kembali ke sini.</p><button class="primary" id="checkVerified" type="button">I've verified my email →</button><button class="google" id="resendVerified" type="button" style="margin-top:12px">Resend verification email</button><button class="back" id="verifyLogout" type="button" style="margin-top:20px">← Sign in with another account</button></div>
-      <p class="bottom-note">A private space for your professional journey.<br>Secure authentication powered by Firebase.</p>
-    </div></main>
+    </aside>
+
+    <!-- RIGHT: fully functional Firebase auth -->
+    <main class="form-stage" id="mainContent">
+      <div class="form-region">
+        <section class="form-card" aria-label="CareerOS account access">
+          <div class="form-topline">
+            <span class="mini-eyebrow">YOUR PERSONAL CAREER SPACE</span>
+            <span class="secure-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg> Secure access</span>
+          </div>
+          <div id="alert" class="alert" role="status" aria-live="polite"></div>
+
+          <div class="mode visible" id="mode-signin">
+            <h2 class="form-title">Welcome back<span class="title-accent">.</span></h2>
+            <p class="form-desc">Lanjutkan perjalanan kariermu. Semua peluang, proses lamaran, dan targetmu ada di sini.</p>
+            <div class="mode-tabs" role="group" aria-label="Authentication mode">
+              <button class="mode-tab active" data-go="signin" type="button" aria-current="page">Sign in</button>
+              <button class="mode-tab" data-go="signup" type="button">Create account</button>
+            </div>
+            <form id="loginForm">
+              <div class="field">
+                <label for="loginEmail">Email address</label>
+                <div class="input-wrap">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+                  <input id="loginEmail" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="name@example.com" required maxlength="254">
+                </div>
+              </div>
+              <div class="field">
+                <label for="loginPassword">Password</label>
+                <div class="input-wrap with-password">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg>
+                  <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                  <button class="pw-toggle" type="button" data-show="loginPassword" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+              </div>
+              <div class="row-actions">
+                <label class="check-label" for="rememberEmail"><input type="checkbox" id="rememberEmail"><span>Remember email</span></label>
+                <button type="button" class="text-btn" data-go="forgot">Forgot password?</button>
+              </div>
+              <button class="primary" type="submit" data-default="Sign in to CareerOS">Sign in to CareerOS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+            </form>
+            <div class="separator">OR CONTINUE WITH</div>
+            <button class="google-btn" id="googleLogin" type="button" aria-label="Continue with Google">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.27 5.48-4.8 7.18l7.73 6C44.38 38.03 46.98 31.87 46.98 24.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.41 14.41 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.2A23.94 23.94 0 0 0 0 24c0 3.86.93 7.51 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              Continue with Google
+            </button>
+          </div>
+
+          <div class="mode" id="mode-signup">
+            <h2 class="form-title">Create your space<span class="title-accent">.</span></h2>
+            <p class="form-desc">Mulai dari langkah pertama. Susun peluang dan target karier dalam satu tempat yang personal.</p>
+            <div class="mode-tabs" role="group" aria-label="Authentication mode">
+              <button class="mode-tab" data-go="signin" type="button">Sign in</button>
+              <button class="mode-tab active" data-go="signup" type="button" aria-current="page">Create account</button>
+            </div>
+            <form id="registerForm">
+              <div class="field">
+                <label for="regName">Full name</label>
+                <div class="input-wrap"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><input id="regName" type="text" autocomplete="name" placeholder="Your full name" required maxlength="100"></div>
+              </div>
+              <div class="field">
+                <label for="regEmail">Email address</label>
+                <div class="input-wrap"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><input id="regEmail" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="name@example.com" required maxlength="254"></div>
+              </div>
+              <div class="field">
+                <label for="regPassword">Password</label>
+                <div class="input-wrap with-password"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg><input id="regPassword" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required><button class="pw-toggle" type="button" data-show="regPassword" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+                <p class="helper" id="passwordHint">Gunakan minimal 8 karakter untuk keamanan akun.</p>
+              </div>
+              <div class="field">
+                <label for="regConfirm">Confirm password</label>
+                <div class="input-wrap with-password"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg><input id="regConfirm" type="password" autocomplete="new-password" placeholder="Repeat your password" minlength="8" required><button class="pw-toggle" type="button" data-show="regConfirm" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+              </div>
+              <button type="submit" class="primary">Create my account <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+            </form>
+          </div>
+
+          <div class="mode" id="mode-forgot">
+            <button type="button" data-go="signin" class="back">← Back to sign in</button>
+            <span class="state-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <h2 class="form-title">Forgot password<span class="title-accent">?</span></h2>
+            <p class="form-desc">Masukkan email akun CareerOS. Kami akan membantu mengirimkan tautan untuk mengatur ulang kata sandi.</p>
+            <form id="forgotForm">
+              <div class="field"><label for="forgotEmail">Email address</label><div class="input-wrap"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><input id="forgotEmail" type="email" autocomplete="email" placeholder="name@example.com" required maxlength="254"></div></div>
+              <button type="submit" class="primary">Send reset link <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+            </form>
+            <p class="form-foot">Periksa juga folder spam jika email belum masuk.</p>
+          </div>
+
+          <div class="mode" id="mode-verify">
+            <span class="state-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m3 7 9 6 9-6"/><path d="m8 15 2 2 5-5"/></svg></span>
+            <h2 class="form-title">Check your inbox<span class="title-accent">.</span></h2>
+            <p class="form-desc">Kami telah mengirim email verifikasi ke <strong id="verifyEmail" style="color:#3b424d; overflow-wrap:anywhere"></strong>. Buka tautannya lalu kembali ke halaman ini.</p>
+            <button class="primary" type="button" id="checkVerified">I've verified my email <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+            <button class="google-btn" style="margin-top:11px" id="resendVerified" type="button">Resend verification email</button>
+            <button class="back" style="margin:24px 0 0" id="verifyLogout" type="button">← Sign in with another account</button>
+          </div>
+        </section>
+        <div class="trust-footer">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg> Secure authentication by Firebase</span>
+          <span>•</span><span>© <span id="formYear">2026</span> CareerOS</span>
+        </div>
+      </div>
+    </main>
   </div>
+
   <script type="module">
-    import {initializeApp} from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js';
-    import {getAuth,setPersistence,browserLocalPersistence,browserSessionPersistence,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendEmailVerification,sendPasswordResetEmail,signInWithPopup,GoogleAuthProvider,updateProfile,signOut,reload,getRedirectResult,signInWithRedirect} from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js';
-    // REPLACE ONLY THESE PUBLIC FIREBASE WEB CONFIG VALUES. NEVER PASTE A SERVICE ACCOUNT KEY.
-    const firebaseConfig={apiKey:'AIzaSyAaXOStPG0MLxZ9Gd8NDvbjeD7Hl_4Zxzc',authDomain:'careeros-database.firebaseapp.com',projectId:'careeros-database',appId:'1:81198568945:web:7851b7a36fbe89b73b2050'};
-    const $=s=>document.querySelector(s), app=initializeApp(firebaseConfig),auth=getAuth(app),provider=new GoogleAuthProvider();
-    const isConfigured=()=>!firebaseConfig.apiKey.startsWith('PASTE_');
-    const modes=['signin','signup','forgot','verify'];let busy=false,registrationInProgress=false;
-    const alertBox=$('#alert');function notice(text,success=false){alertBox.textContent=text;alertBox.className='alert show'+(success?' success':'');}
-    function mode(name){modes.forEach(x=>$('#mode-'+x).classList.toggle('visible',x===name));alertBox.className='alert';window.scrollTo({top:0,behavior:'instant'});}
-    const messages={'auth/invalid-credential':'Email atau password salah.','auth/email-already-in-use':'Email sudah terdaftar. Silakan login.','auth/weak-password':'Password terlalu lemah.','auth/network-request-failed':'Koneksi bermasalah. Periksa internet.','auth/popup-blocked':'Browser memblokir popup. Gunakan login email atau izinkan popup.','auth/too-many-requests':'Terlalu banyak percobaan. Coba lagi nanti.','auth/unauthorized-domain':'Tambahkan domain website ke Firebase Authorized Domains.'};
-    function report(e){notice(messages[e.code]||e.message||'Terjadi kesalahan. Silakan coba lagi.');console.warn('Auth error code:',e.code||'unknown');}
-    async function run(form,action){if(busy)return;busy=true;const buttons=[...form.querySelectorAll('button[type=submit]')];buttons.forEach(b=>{b.disabled=true;b.dataset.old=b.textContent;b.textContent='Processing…';});try{if(!isConfigured())throw new Error('Isi firebaseConfig di index.html terlebih dahulu.');await action();}catch(e){report(e);}finally{busy=false;buttons.forEach(b=>{b.disabled=false;b.textContent=b.dataset.old;});}}
-    async function verified(user){await reload(user);if(user.emailVerified){location.replace('main.html');return true;}$('#verifyEmail').textContent=user.email||'your email';mode('verify');return false;}
-    document.addEventListener('click',ev=>{const go=ev.target.closest('[data-go]'),show=ev.target.closest('[data-show]');if(go)mode(go.dataset.go);if(show){const input=document.getElementById(show.dataset.show);input.type=input.type==='password'?'text':'password';show.setAttribute('aria-label',input.type==='password'?'Show password':'Hide password');}});
-    $('#rememberEmail').checked=localStorage.getItem('careerosRemember')==='1';if($('#rememberEmail').checked)$('#loginEmail').value=localStorage.getItem('careerosEmail')||'';
-    $('#loginForm').addEventListener('submit',e=>{e.preventDefault();run(e.target,async()=>{await setPersistence(auth,$('#rememberEmail').checked?browserLocalPersistence:browserSessionPersistence);const email=$('#loginEmail').value.trim();if($('#rememberEmail').checked){localStorage.setItem('careerosRemember','1');localStorage.setItem('careerosEmail',email);}else{localStorage.removeItem('careerosRemember');localStorage.removeItem('careerosEmail');}await signInWithEmailAndPassword(auth,email,$('#loginPassword').value);await verified(auth.currentUser);});});
-    $('#registerForm').addEventListener('submit',e=>{e.preventDefault();run(e.target,async()=>{if($('#regPassword').value!==$('#regConfirm').value)throw new Error('Konfirmasi password tidak sama.');registrationInProgress=true;try{await setPersistence(auth,browserLocalPersistence);const credential=await createUserWithEmailAndPassword(auth,$('#regEmail').value.trim(),$('#regPassword').value);await updateProfile(credential.user,{displayName:$('#regName').value.trim()});await sendEmailVerification(credential.user);$('#verifyEmail').textContent=credential.user.email;mode('verify');notice('Akun berhasil dibuat. Silakan verifikasi email untuk melanjutkan.',true);}finally{registrationInProgress=false;}});});
-    $('#forgotForm').addEventListener('submit',e=>{e.preventDefault();run(e.target,async()=>{await sendPasswordResetEmail(auth,$('#forgotEmail').value.trim());notice('Jika email terdaftar, tautan reset akan dikirim. Periksa inbox atau spam.',true);});});
-    $('#googleLogin').addEventListener('click',async()=>{if(busy)return;busy=true;try{if(!isConfigured())throw new Error('Isi konfigurasi Firebase terlebih dahulu.');await setPersistence(auth,browserLocalPersistence);try{await signInWithPopup(auth,provider);}catch(e){if(e.code==='auth/popup-blocked'){await signInWithRedirect(auth,provider);return;}throw e;}await verified(auth.currentUser);}catch(e){report(e);}finally{busy=false;}});
-    $('#checkVerified').addEventListener('click',async()=>{try{if(!auth.currentUser)throw new Error('Sesi tidak ditemukan. Silakan login kembali.');if(!(await verified(auth.currentUser)))notice('Email belum terverifikasi. Klik link dari inbox, lalu coba lagi.');}catch(e){report(e);}});
-    $('#resendVerified').addEventListener('click',async()=>{try{if(!auth.currentUser)throw new Error('Silakan login kembali.');await sendEmailVerification(auth.currentUser);notice('Email verifikasi dikirim ulang.',true);}catch(e){report(e);}});
-    $('#verifyLogout').addEventListener('click',async()=>{await signOut(auth);mode('signin');});
-    if(!isConfigured())notice('Konfigurasi Firebase belum diisi. Edit firebaseConfig pada index.html.');
-    onAuthStateChanged(auth,user=>{if(registrationInProgress)return;if(user&&user.emailVerified){location.replace('main.html');}else if(user&&!user.emailVerified){$('#verifyEmail').textContent=user.email||'';mode('verify');}});
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js';
+    import {
+      getAuth, setPersistence, browserLocalPersistence, browserSessionPersistence,
+      onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+      sendEmailVerification, sendPasswordResetEmail, signInWithPopup,
+      GoogleAuthProvider, updateProfile, signOut, reload, getRedirectResult,
+      signInWithRedirect
+    } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js';
+
+    // Firebase public web configuration from CareerOS Firebase project.
+    // These values are public identifiers, NOT service account private keys.
+    const firebaseConfig = {
+      apiKey: 'AIzaSyAaXOStPG0MLxZ9Gd8NDvbjeD7Hl_4Zxzc',
+      authDomain: 'careeros-database.firebaseapp.com',
+      projectId: 'careeros-database',
+      storageBucket: 'careeros-database.firebasestorage.app',
+      messagingSenderId: '81198568945',
+      appId: '1:81198568945:web:7851b7a36fbe89b73b2050'
+    };
+
+    const $ = selector => document.querySelector(selector);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    const modes = ['signin', 'signup', 'forgot', 'verify'];
+    const alertBox = $('#alert');
+    const iconEye = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>`;
+    const iconEyeOff = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 18 18M10.6 5.1A12 12 0 0 1 12 5c6.2 0 10 7 10 7a15 15 0 0 1-3.2 3.8M6.2 6.2A16 16 0 0 0 2 12s3.8 7 10 7c1.4 0 2.7-.4 3.9-1"/><path d="M10 10a3 3 0 0 0 4 4"/></svg>`;
+    let busy = false;
+    let registrationInProgress = false;
+
+    $('#brandYear').textContent = String(new Date().getFullYear());
+    $('#formYear').textContent = String(new Date().getFullYear());
+    document.querySelectorAll('[data-show]').forEach(button => button.innerHTML = iconEye);
+
+    function notice(message, success = false) {
+      alertBox.textContent = message;
+      alertBox.className = 'alert show' + (success ? ' success' : '');
+    }
+    function clearNotice() { alertBox.textContent = ''; alertBox.className = 'alert'; }
+    function setMode(name) {
+      if (!modes.includes(name)) name = 'signin';
+      for (const item of modes) {
+        const view = $('#mode-' + item);
+        view.classList.toggle('visible', name === item);
+        view.setAttribute('aria-hidden', String(name !== item));
+      }
+      clearNotice();
+      // Keep keyboard users in context without forcing unnecessary page scroll.
+      if (window.innerWidth < 1001) window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    const messages = {
+      'auth/invalid-credential':'Email atau password salah. Silakan periksa kembali.',
+      'auth/wrong-password':'Email atau password salah. Silakan periksa kembali.',
+      'auth/email-already-in-use':'Email ini sudah terdaftar. Coba masuk ke akunmu.',
+      'auth/invalid-email':'Format email tidak valid.',
+      'auth/weak-password':'Password terlalu lemah. Buat password minimal 8 karakter.',
+      'auth/network-request-failed':'Gagal terhubung ke Firebase. Periksa koneksi internet.',
+      'auth/popup-blocked':'Popup login diblokir browser. Izinkan popup atau gunakan login email.',
+      'auth/popup-closed-by-user':'Jendela Google Sign-In ditutup sebelum login selesai.',
+      'auth/cancelled-popup-request':'Permintaan login sebelumnya dibatalkan.',
+      'auth/too-many-requests':'Terlalu banyak percobaan. Coba lagi nanti.',
+      'auth/unauthorized-domain':'Domain belum didaftarkan di Firebase → Authentication → Authorized domains.',
+      'auth/operation-not-allowed':'Metode login ini belum diaktifkan di Firebase Console.',
+      'auth/invalid-api-key':'Konfigurasi Firebase API key tidak valid.'
+    };
+    function report(error) {
+      notice(messages[error?.code] || error?.message || 'Terjadi kesalahan. Silakan coba lagi.');
+      console.warn('CareerOS authentication code:', error?.code || 'unknown');
+    }
+    function setLoading(button, working) {
+      if (!button) return;
+      if (working) {
+        button.dataset.originalHtml = button.innerHTML;
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
+        button.textContent = 'Processing…';
+      } else {
+        button.disabled = false;
+        button.setAttribute('aria-busy', 'false');
+        if (button.dataset.originalHtml) button.innerHTML = button.dataset.originalHtml;
+      }
+    }
+    async function submit(form, fn) {
+      if (busy) return;
+      busy = true;
+      clearNotice();
+      const submitButton = form.querySelector('button[type="submit"]');
+      setLoading(submitButton, true);
+      try { await fn(); }
+      catch (error) { report(error); }
+      finally { setLoading(submitButton, false); busy = false; }
+    }
+    async function checkedEmail(user) {
+      if (!user) throw new Error('Sesi tidak ditemukan. Silakan login kembali.');
+      await reload(user);
+      if (user.emailVerified) {
+        location.replace('main.html');
+        return true;
+      }
+      $('#verifyEmail').textContent = user.email || 'email akunmu';
+      setMode('verify');
+      return false;
+    }
+
+    document.addEventListener('click', event => {
+      const changeMode = event.target.closest('[data-go]');
+      if (changeMode) {
+        setMode(changeMode.dataset.go);
+        return;
+      }
+      const toggle = event.target.closest('[data-show]');
+      if (toggle) {
+        const input = document.getElementById(toggle.dataset.show);
+        if (!input) return;
+        const visible = input.type === 'password';
+        input.type = visible ? 'text' : 'password';
+        toggle.setAttribute('aria-pressed', String(visible));
+        toggle.setAttribute('aria-label', visible ? 'Hide password' : 'Show password');
+        toggle.innerHTML = visible ? iconEyeOff : iconEye;
+      }
+    });
+
+    const remembered = localStorage.getItem('careerosRemember') === '1';
+    $('#rememberEmail').checked = remembered;
+    if (remembered) $('#loginEmail').value = localStorage.getItem('careerosEmail') || '';
+
+    $('#loginForm').addEventListener('submit', event => {
+      event.preventDefault();
+      submit(event.currentTarget, async () => {
+        const email = $('#loginEmail').value.trim();
+        await setPersistence(auth, $('#rememberEmail').checked ? browserLocalPersistence : browserSessionPersistence);
+        if ($('#rememberEmail').checked) {
+          localStorage.setItem('careerosRemember', '1');
+          localStorage.setItem('careerosEmail', email);
+        } else {
+          localStorage.removeItem('careerosRemember');
+          localStorage.removeItem('careerosEmail');
+        }
+        await signInWithEmailAndPassword(auth, email, $('#loginPassword').value);
+        await checkedEmail(auth.currentUser);
+      });
+    });
+
+    $('#registerForm').addEventListener('submit', event => {
+      event.preventDefault();
+      submit(event.currentTarget, async () => {
+        const fullName = $('#regName').value.trim();
+        const email = $('#regEmail').value.trim();
+        const password = $('#regPassword').value;
+        const confirmation = $('#regConfirm').value;
+        if (fullName.length < 2) throw new Error('Nama lengkap minimal 2 karakter.');
+        if (password.length < 8) throw new Error('Password minimal 8 karakter.');
+        if (password !== confirmation) {
+          $('#regConfirm').classList.add('is-invalid');
+          throw new Error('Konfirmasi password belum sama.');
+        }
+        $('#regConfirm').classList.remove('is-invalid');
+        registrationInProgress = true;
+        try {
+          await setPersistence(auth, browserLocalPersistence);
+          const result = await createUserWithEmailAndPassword(auth, email, password);
+          await updateProfile(result.user, { displayName: fullName });
+          await sendEmailVerification(result.user);
+          $('#verifyEmail').textContent = result.user.email || email;
+          setMode('verify');
+          notice('Akun berhasil dibuat. Silakan cek email untuk melakukan verifikasi.', true);
+        } finally {
+          registrationInProgress = false;
+        }
+      });
+    });
+
+    $('#forgotForm').addEventListener('submit', event => {
+      event.preventDefault();
+      submit(event.currentTarget, async () => {
+        await sendPasswordResetEmail(auth, $('#forgotEmail').value.trim());
+        notice('Jika email terdaftar, tautan reset akan dikirim. Periksa inbox dan folder spam.', true);
+      });
+    });
+
+    $('#googleLogin').addEventListener('click', async event => {
+      if (busy) return;
+      busy = true;
+      const button = event.currentTarget;
+      setLoading(button, true);
+      clearNotice();
+      try {
+        await setPersistence(auth, browserLocalPersistence);
+        try {
+          await signInWithPopup(auth, provider);
+        } catch (error) {
+          if (error.code === 'auth/popup-blocked') {
+            await signInWithRedirect(auth, provider);
+            return;
+          }
+          throw error;
+        }
+        await checkedEmail(auth.currentUser);
+      } catch (error) { report(error); }
+      finally { setLoading(button, false); busy = false; }
+    });
+
+    $('#checkVerified').addEventListener('click', async event => {
+      if (busy) return;
+      busy = true;
+      setLoading(event.currentTarget, true);
+      try {
+        if (!(await checkedEmail(auth.currentUser))) notice('Email belum terverifikasi. Klik link dari inbox, lalu coba lagi.');
+      } catch (error) { report(error); }
+      finally { setLoading(event.currentTarget, false); busy = false; }
+    });
+    $('#resendVerified').addEventListener('click', async event => {
+      if (busy) return;
+      busy = true;
+      setLoading(event.currentTarget, true);
+      try {
+        if (!auth.currentUser) throw new Error('Silakan login kembali.');
+        await sendEmailVerification(auth.currentUser);
+        notice('Email verifikasi telah dikirim ulang.', true);
+      } catch (error) { report(error); }
+      finally { setLoading(event.currentTarget, false); busy = false; }
+    });
+    $('#verifyLogout').addEventListener('click', async () => {
+      try { await signOut(auth); setMode('signin'); }
+      catch (error) { report(error); }
+    });
+
+    $('#regPassword').addEventListener('input', event => {
+      const value = event.currentTarget.value;
+      $('#passwordHint').textContent = !value ? 'Gunakan minimal 8 karakter untuk keamanan akun.' : value.length < 8 ? `Minimal 8 karakter · ${value.length}/8` : '✓ Panjang password memenuhi syarat minimum.';
+    });
+    $('#regConfirm').addEventListener('input', () => $('#regConfirm').classList.remove('is-invalid'));
+
+    onAuthStateChanged(auth, user => {
+      if (registrationInProgress) return;
+      if (user?.emailVerified) {
+        location.replace('main.html');
+      } else if (user) {
+        $('#verifyEmail').textContent = user.email || '';
+        setMode('verify');
+      }
+    });
+    // Consume redirect result for browsers where Google popup is blocked.
     getRedirectResult(auth).catch(report);
   </script>
-</body></html>
+</body>
+</html>
